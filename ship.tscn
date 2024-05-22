@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtw77tg8mknpw"]
+[gd_scene load_steps=3 format=3 uid="uid://dtw77tg8mknpw"]
 
 [ext_resource type="Script" path="res://ship.gd" id="1_nxud8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psqtg"]
+size = Vector2(100, 100)
 
 [node name="Ship" type="RigidBody2D"]
 script = ExtResource("1_nxud8")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(0, 0, 50, 0, 50, 50, 0, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_psqtg")
+debug_color = Color(0.949092, 1.63645e-06, 0.575166, 0.42)

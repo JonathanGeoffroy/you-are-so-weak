@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnt206phv0thi"]
+[gd_scene load_steps=3 format=3 uid="uid://bnt206phv0thi"]
 
 [ext_resource type="PackedScene" uid="uid://dtw77tg8mknpw" path="res://ship.tscn" id="1_loxdt"]
+[ext_resource type="PackedScene" uid="uid://ce5neq66qbadw" path="res://BrakeZone.tscn" id="2_p2wve"]
 
 [node name="World" type="Node2D"]
+
+[node name="BreakZone" parent="." instance=ExtResource("2_p2wve")]
+position = Vector2(150, 150)
 
 [node name="Ship" parent="." instance=ExtResource("1_loxdt")]
