@@ -1,7 +1,13 @@
-extends Node2D
+extends RigidBody2D
 
-@export var speed = 300
+@export var speed = 200
 
+var screen_size: Vector2
+
+func _ready():
+	var viewport_size = get_viewport_rect().size
+	screen_size = Vector2(viewport_size.x - 100, viewport_size.y -100)
+	
 func _physics_process(delta):
 	var x = 0;
 	var y = 0;
@@ -14,7 +20,6 @@ func _physics_process(delta):
 		y = -1;
 	elif Input.is_action_pressed("move_bottom"):
 		y = 1;
-		
-	var move = Vector2(x, y).normalized()
-	position.x += move.x * speed * delta
-	position.y += move.y * speed * delta
+	
+	apply_force(Vector2(x * speed, y * speed))
+	position = position.clamp(Vector2.ZERO, screen_size)

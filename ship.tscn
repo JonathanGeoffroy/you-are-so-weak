@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ship.gd" id="1_nxud8"]
 
-[node name="Ship" type="Node2D"]
+[node name="Ship" type="RigidBody2D"]
 script = ExtResource("1_nxud8")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
